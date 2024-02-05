@@ -74,12 +74,12 @@ bool CXInputManager::isMouseDown(const  CXMouseButton& button)
 		return (state == 0);
 
 	}
-	else if (button == CXMouseButton::Middle)
+	if (button == CXMouseButton::Middle)
 	{
 		auto state = m_keys_state_res[VK_MBUTTON];
 		return (state == 0);
 	}
-	else if (button == CXMouseButton::Right)
+	if (button == CXMouseButton::Right)
 	{
 		auto state = m_keys_state_res[VK_RBUTTON];
 		return (state == 0);
@@ -96,12 +96,12 @@ bool CXInputManager::isMouseUp(const  CXMouseButton& button)
 		return  (state == 1);
 
 	}
-	else if (button == CXMouseButton::Middle)
+	if (button == CXMouseButton::Middle)
 	{
 		auto state = m_keys_state_res[VK_MBUTTON];
 		return  (state == 1);
 	}
-	else if (button == CXMouseButton::Right)
+	if (button == CXMouseButton::Right)
 	{
 		auto state = m_keys_state_res[VK_RBUTTON];
 		return (state == 1);
