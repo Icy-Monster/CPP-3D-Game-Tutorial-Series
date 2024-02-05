@@ -57,13 +57,12 @@ CXGraphicsEngine::CXGraphicsEngine()
 	HRESULT res = 0;
 	D3D_FEATURE_LEVEL m_feature_level;
 
-	for (UINT driver_type_index = 0; driver_type_index < num_driver_types;)
+	for (D3D_DRIVER_TYPE driver : driver_types)
 	{
-		res = D3D11CreateDevice(NULL, driver_types[driver_type_index], NULL, NULL, feature_levels,
+		res = D3D11CreateDevice(NULL, driver, NULL, NULL, feature_levels,
 			num_feature_levels, D3D11_SDK_VERSION, &m_d3dDevice, &m_feature_level, &m_immContext);
 		if (SUCCEEDED(res))
 			break;
-		++driver_type_index;
 	}
 
 
